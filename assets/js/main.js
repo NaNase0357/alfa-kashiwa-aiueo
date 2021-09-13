@@ -31,6 +31,11 @@ const app = Vue.createApp({
           // q3: 'ききき',
         }
       },
+      stage4: {
+          q1: 'けいびとめる',
+          // q2: 'えええ',
+          // q3: 'おおお'
+        },
 
       /* それぞれの問題が正解かどうか
       *  ex. 問題2-3を追加する場合は配列にfalseを追加します。
@@ -48,7 +53,12 @@ const app = Vue.createApp({
           false, // 3-1
           // false, // 3-2
           // false, // 3-3
-        ]
+        ],
+        stage4: [
+          false, // 2-1
+          // false, // 2-2
+          // false, // 2-3
+        ],
       },
 
       /* ステージの問題が全て正解かどうか */
@@ -64,6 +74,7 @@ const app = Vue.createApp({
       next: {
         stage1: false,
         stage2: false,
+        stage3: false,
       },
     }
   },
