@@ -271,6 +271,90 @@ STAGE3-3追加　ここまで -->
       </div>
       <!-- STAGE3　ここまで -->
 
+      <!-- STAGE4　ここから -->
+      <!---------------------------------------------------------------------
+        クリア画面の「次のステージへ」ボタンをクリックしたら表示します。
+        v-if="next['stage3']"はnext['stage3']がtrueになったら表示します。
+      ----------------------------------------------------------------------->
+      <div v-if="next['stage3']" id="sectionStage2" class="stage">
+        <section>
+          <div class="section">
+            <div class="container">
+              <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：4</span>警備を止めろッ！</h2>
+              <p class="text-center">中央玄関へ向かうカタクリズム<br>
+　　　　しかし、暴走した警備ロボットに道を阻まれてしまったッ！<br>
+  そこへ助けにきたのは...化学クラブの生徒ッ！?<br>
+　　　　化学クラブの生徒が警備ロボを食い止めている間に警備を止めよッ！ッ！</div>
+          <div class="stage-column__container section bg-color--keycolor">
+            <div class="container">
+              <h2 class="section-title"><span class="section-title__stage">STAGE：4</span>キーワードを入力</h2>
+              <!-------------------------------------------------------------
+                class名"row"内のclass名"column"が横並びになります。
+                改行する場合は以下のように追加してください。
+                <div class="row">
+                  <div class="column">
+                    ～ 内容 ～
+                  </div>
+                </div>
+              ------------------------------------------------------------->
+              <div class="row">
+
+                <!-- STAGE4-1　ここから -->
+                <div class="column">
+                  <!-- STAGE4-1問題セクション　ここから -->
+                  <figure class="image__container">
+                    <img src="assets/images/問題5.png" alt="">
+                  </figure>
+                  <!-- STAGE4-1問題セクション　ここまで -->
+                  <!-- STAGE4-1解答入力セクション　ここから -->
+                  <answer-input v-bind:correct="correctAnswer['stage4']['q1']" v-on:answer-input="answerInput($event, 'stage4', 1)"></answer-input>
+                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
+                  <!-- STAGE2-1解答入力セクション　ここまで -->
+                </div><!-- /.column -->
+                <!-- STAGE4-1　ここまで -->
+
+<!-- STAGE2-2 を追加
+                <div class="column">
+                  <figure class="image__container">
+                    <img src="assets/images/stage.png" alt="">
+                  </figure>
+                  <answer-input v-bind:correct="correctAnswer['stage2']['q2']" v-on:answer-input="answerInput($event, 'stage2', 2)"></answer-input>
+                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
+                　
+                </div>
+2-2追加ここまで -->
+                  
+<!-- STAGE2-3 を追加
+                <div class="column">
+                  <figure class="image__container">
+                    <img src="assets/images/stage.png" alt="">
+                  </figure>
+                  <answer-input v-bind:correct="correctAnswer['stage2']['q3']" v-on:answer-input="answerInput($event, 'stage2', 3)"></answer-input>
+                  <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
+                </div>
+2-3追加ここまで -->
+
+              </div><!-- /.row -->
+
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE2クリア画面　ここから -->
+        <section v-if="clear['stage4']" v-bind:class="{isClear:clear['stage4']}"  class="section section--clear bg-color--gray">
+          <div class="container">
+            <div class="clear-message">
+              <div class="clear-message__title">STAGE：4　クリア！</div>
+              <div class="clear-message__content">黒板の指示に従い、<br>
+                次のステージの謎を解こう！</div>
+                <button v-on:click="nextStage('stage4')" onclick="location.href='#sectionStage5'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
+            </div>
+          </div>
+        </section>
+        <!-- STAGE4クリア画面　ここまで -->
+      </div>
+      <!-- STAGE4　ここまで -->
+        
     </div>
   </main>
   <footer class="footer section bg-color--gray">
